@@ -36,7 +36,7 @@ RUN pip install matplotlib
 RUN echo "import os" > $HOME/.pdbrc && \
     echo "import sys" >> $HOME/.pdbrc && \
     echo "sys.path.append('/workspace/')" >> $HOME/.pdbrc && \
-    echo "with open('/workspace/debug-helper.py') as file: exec(file.read())" >> $HOME/.pdbrc && \
+    echo "with open('/workspace/debug_helper.py') as file: exec(file.read())" >> $HOME/.pdbrc && \
     echo "alias save save_state(vars())" >> $HOME/.pdbrc
 
 ENV PYTHONPATH=/workspace/:$PYTHONPATH
