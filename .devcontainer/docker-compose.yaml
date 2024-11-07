@@ -1,0 +1,15 @@
+version: "3.6"
+services:
+  python-environment:
+    container_name: python-debugging
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           capabilities: [gpu, utility, compute]
+    volumes:
+      - .:/workspace
