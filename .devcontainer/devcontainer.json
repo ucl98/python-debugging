@@ -2,14 +2,5 @@
   "name": "python debugger",
   "dockerComposeFile": ["./docker-compose.yaml"],
   "service": "python-environment",
-  "workspaceFolder": "/workspace",
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-  ],
-  // "containerEnv": {
-  //   "DISPLAY": "${localEnv:DISPLAY}",
-  //   "NVIDIA_VISIBLE_DEVICES": "all",
-  //   "NVIDIA_DRIVER_CAPABILITIES": "all"
-  // },
-  "forwardPorts": [8888, 8889]
+  "workspaceFolder": "/workspace"
 }

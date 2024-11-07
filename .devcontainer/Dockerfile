@@ -32,13 +32,14 @@ RUN pip install notebook
 RUN pip install dill
 RUN pip install matplotlib
 
+# debugging with jupyter-notebook
 RUN echo "import os" > $HOME/.pdbrc && \
     echo "import sys" >> $HOME/.pdbrc && \
-    echo "sys.path.append('/workspaces/python-debugger')" >> $HOME/.pdbrc && \
-    echo "with open('/workspaces/python-debugger/helper.py') as file: exec(file.read())" >> $HOME/.pdbrc && \
+    echo "sys.path.append('/workspace/')" >> $HOME/.pdbrc && \
+    echo "with open('/workspace/debug-helper.py') as file: exec(file.read())" >> $HOME/.pdbrc && \
     echo "alias save save_state(vars())" >> $HOME/.pdbrc
 
-ENV PYTHONPATH=/workspaces/python-debugger:$PYTHONPATH
+ENV PYTHONPATH=/workspace/:$PYTHONPATH
 ENV PYTHONSTARTUP=$HOME/.pdbrc
 
 CMD ["sleep", "infinity"]
